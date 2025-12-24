@@ -1,0 +1,27 @@
+PPE_Safety_System/
+│
+├── data/                       # Dataset management [cite: 42]
+│   ├── raw/                    # Original noisy industrial images [cite: 21]
+│   ├── processed/              # Images after Diffusion denoising [cite: 24, 39]
+│   └── annotations/            # Labels for helmets, vests, masks, and gloves [cite: 7, 42]
+│
+├── models/                     # Hybrid Deep Learning Architecture [cite: 6, 33]
+│   ├── __init__.py
+│   ├── diffusion_model.py      # Module for noise suppression and clarity [cite: 8, 24]
+│   ├── cnn_backbone.py         # Local feature extraction layers [cite: 36]
+│   ├── vit_backbone.py         # Global context interpretation layers [cite: 37]
+│   └── hybrid_detector.py      # The fused CNN-ViT detection head [cite: 7, 23]
+│
+├── src/                        # Core application logic
+│   ├── preprocessing.py        # Implementation of diffusion update equations [cite: 66, 67]
+│   ├── inference.py            # Real-time surveillance processing [cite: 10, 17]
+│   └── alerting.py             # Logic for automated safety alerts 
+│
+├── utils/                      # Helper scripts
+│   ├── metrics.py              # Precision, Recall, and mAP calculation [cite: 43, 49]
+│   └── visualization.py        # Drawing bounding boxes for the demo [cite: 52, 64]
+│
+├── tests/                      # Testing scripts for each module
+├── requirements.txt            # List of dependencies (PyTorch, OpenCV, etc.)
+├── main.py                     # Entry point to run the real-time system [cite: 10, 17]
+└── README.md                   # Project documentation and setup guide
